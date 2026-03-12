@@ -1,5 +1,6 @@
 import { calculator, capitalize } from "./index.js";
 import { reverseString } from "./index.js";
+import { caesarCipher } from "./index.js";
 
 test('checks capitalization', () => {
     expect(capitalize('gaurav')).toBe('Gaurav');
@@ -14,4 +15,11 @@ test('checks calculator object' , () =>{
     expect(calculator.multiply(2,3)).toBe(6);
     expect(calculator.subtract(2,3)).toBe(-1);
     expect(calculator.divide(2,3)).toBeCloseTo(0.666);
+});
+
+test('caesarCipher', () =>{
+    expect(caesarCipher('abc',1)).toBe('bcd');
+    expect(caesarCipher('abz',1)).toBe('bca');
+    expect(caesarCipher('abc',3)).toBe('def');
+    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
 });
