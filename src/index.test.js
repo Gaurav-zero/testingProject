@@ -1,6 +1,7 @@
 import { calculator, capitalize } from "./index.js";
 import { reverseString } from "./index.js";
 import { caesarCipher } from "./index.js";
+import { analyzeArray} from "./index.js";
 
 test('checks capitalization', () => {
     expect(capitalize('gaurav')).toBe('Gaurav');
@@ -22,4 +23,11 @@ test('caesarCipher', () =>{
     expect(caesarCipher('abz',1)).toBe('bca');
     expect(caesarCipher('abc',3)).toBe('def');
     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+});
+
+test('analyzeArray', () =>{
+    expect(analyzeArray([1,8,3,4,2,6])).toHaveProperty('average',4);
+    expect(analyzeArray([1,8,3,4,2,6])).toHaveProperty('min',1);
+    expect(analyzeArray([1,8,3,4,2,6])).toHaveProperty('max',8);
+    expect(analyzeArray([1,8,3,4,2,6])).toHaveProperty('length',6);
 });

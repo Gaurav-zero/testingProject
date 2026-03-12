@@ -68,3 +68,16 @@ export function caesarCipher(str,k){
     let newStr= arr.join("");
     return newStr;
 }
+
+function findAverage(arr){
+    let sum= arr.reduce((sum, current) => sum + current, 0);
+    return sum/arr.length;
+}
+export function analyzeArray(arr){
+    return {
+        average: findAverage(arr),
+        min:arr.reduce((minimum, current)=> current<minimum ? current : minimum),
+        max:arr.reduce((maximum, current)=> current>maximum ? current : maximum),
+        length:arr.reduce((length,current)=> length+1, 0),
+    }
+}
